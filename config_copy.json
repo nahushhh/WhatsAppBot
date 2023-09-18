@@ -1,0 +1,8 @@
+{
+    "RECIPIENT_WAID":"<<your_number>>",
+    "VERSION": "v17.0",
+    "PHONE_NUMBER_ID": "<<phone_number_id>>",
+    "VERIFY_TOKEN": "<<verify_token>>",
+    "ACCESS_TOKEN": "<<temporary_access_token>>"
+}
+
