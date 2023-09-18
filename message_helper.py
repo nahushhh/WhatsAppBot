@@ -12,8 +12,7 @@ from langchain.vectorstores.faiss import FAISS
 
 
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
-API_KEY = "Your API Key"
-
+API_KEY = os.environ['OPENAI_API_KEY']
 class WhatsAppWraper:
 
     ## loading the config.json file
@@ -63,23 +62,23 @@ class WhatsAppWraper:
         return response
 
     # send text message
-    # def send_text_msg_function(self, body):
-    #     txt_url = f"https://graph.facebook.com/{self.data['VERSION']}/{self.data['PHONE_NUMBER_ID']}/messages"
-    #     print(txt_url)
+    def send_text_msg_function(self, body):
+        txt_url = f"https://graph.facebook.com/{self.data['VERSION']}/{self.data['PHONE_NUMBER_ID']}/messages"
+        print(txt_url)
 
-    #     text_msg_params = {
-    #         "messaging_product": "whatsapp",    
-    #         "recipient_type": "individual",
-    #         "to": f"{self.data['RECIPIENT_WAID']}",
-    #         "type": "text",
-    #         "text": {
-    #             "preview_url": False,
-    #             "body": body
-    #         }
-    #     }
+        text_msg_params = {
+            "messaging_product": "whatsapp",    
+            "recipient_type": "individual",
+            "to": f"{self.data['RECIPIENT_WAID']}",
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": body
+            }
+        }
 
-        # text_response = requests.post(url=txt_url, json=text_msg_params, headers=self.header)
-        # return text_response
+        text_response = requests.post(url=txt_url, json=text_msg_params, headers=self.header)
+        return text_response
     
     def webhook_handler(self):
         res = request.get_json()
