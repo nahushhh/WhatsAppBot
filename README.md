@@ -5,8 +5,7 @@ Steps to run locally -
 
 2 - Start the flask app by entering the command `flask.run`.
 
-3 - Start the ngrok server using command `ngrok http 5000` (I had installed ngrok in my project's local directory. If you are using ngrok for the first time, make sure to 
-execute the authentication command first. The authentication command can be found on the ngrok website.)
+3 - Start the ngrok server using command `ngrok http port_number` (I had installed ngrok in my project's local directory. If you are using ngrok for the first time, make sure to execute the authentication command first. The authentication command can be found on the ngrok website.)
 
   3.1 - Copy the link from ngrok and paste it in the Callback URL section in the WhatsApp Business API Configuration page. Add /webhook as the endpoint 
   (https://33ee-110-226-179-194.ngrok-free.app/webhook)
