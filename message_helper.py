@@ -12,7 +12,7 @@ from langchain.vectorstores.faiss import FAISS
 
 
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
-API_KEY = os.environ['OPENAI_API_KEY']
+API_KEY = "your_key"
 class WhatsAppWraper:
 
     ## loading the config.json file
